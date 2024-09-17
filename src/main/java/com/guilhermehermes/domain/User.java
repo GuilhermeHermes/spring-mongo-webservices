@@ -2,7 +2,12 @@ package com.guilhermehermes.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.lang.NonNull;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern.Flag;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -14,8 +19,13 @@ public class User implements Serializable {
 
     @Id
     private String id;
+
+
     private String name;
+
+
     private String email;
+
 
     public User(String id, String name, String email) {
         this.id = id;
